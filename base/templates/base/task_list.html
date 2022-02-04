@@ -5,7 +5,7 @@
 
 <div>
     <h1>Hola {{request.user|title}}</h1>
-    <h3 style= "margin:0">Tienes  <i>{{count}}</i>  Tareas Incompletas{{ count|pluralize:"s" }} </h3>
+    <h3 style= "margin:0">Tienes  <i>{{count}}</i>  tareas Incompleta{{ count|pluralize:"s" }} </h3>
 </div>
 {% if request.user.is_authenticated %}
 <a href="{% url 'logout' %}">Inicia Sesion</a>
