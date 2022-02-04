@@ -4,20 +4,20 @@
 <div class="header-bar">
 
 <div>
-    <h1>Hello {{request.user|title}}</h1>
-    <h3 style= "margin:0">you have  <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }} </h3>
+    <h1>Hola {{request.user|title}}</h1>
+    <h3 style= "margin:0">Tienes  <i>{{count}}</i>  Tareas Incompletas{{ count|pluralize:"s" }} </h3>
 </div>
 {% if request.user.is_authenticated %}
-<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'logout' %}">Inicia Sesion</a>
 {% else %}
-<a href ="{% url 'login' %}">Login</a>
+<a href ="{% url 'login' %}">Inicia Sesion</a>
 {% endif %}
 </div>
 
 <div id="search-add-wrapper">
     <form method="GET" style="margin-top: 20px; display:flex;">
         <input type="text" name='search-area' value="{{search_input}}">
-        <input class="button" type="submit" value='Search'>
+        <input class="button" type="submit" value='Buscar'>
     </form>
     <a id="add-link" href="{% url 'task-create' %}">&#43;</a>
 </div>
@@ -45,7 +45,7 @@
         </div>
 
     {% empty %}
-    <h3>No items in list</h3>
+    <h3>No tienes ninguna tarea pendiente</h3>
     {% endfor %}
 
 </div>
